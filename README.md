@@ -26,10 +26,10 @@ docker build -t jamescherti/oddmuse github.com/jamescherti/docker-oddmuse
 ## Usage
 
 ``` shell
-docker run -it --rm \
+docker run --rm \
   -v /local/path/to/oddmuse:/data \
   -p 8080:80 \
-  -v --env ODDMUSE_URL_PATH=/wiki \
+  --env ODDMUSE_URL_PATH=/wiki \
   jamescherti/oddmuse
 ```
 
