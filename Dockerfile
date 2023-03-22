@@ -48,5 +48,4 @@ EXPOSE 80
 
 COPY entrypoint.sh /sbin/entrypoint.sh
 RUN chmod 755 /sbin/entrypoint.sh
-WORKDIR /data
 CMD ["/sbin/entrypoint.sh"]
