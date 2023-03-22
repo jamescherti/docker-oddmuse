@@ -32,6 +32,8 @@ RUN DEBIAN_FRONTEND="noninteractive" apt-get -q update && \
 RUN wget -O /usr/lib/cgi-bin/wiki.pl \
         https://git.savannah.nongnu.org/cgit/oddmuse.git/plain/wiki.pl
 
+COPY apache2-oddmuse.conf /etc/apache2/sites-available/oddmuse.conf
+
 RUN groupadd --gid "1000" oddmuse && \
     useradd -m --gid oddmuse --uid "1000" --shell /bin/bash oddmuse && \
     mkdir -p "$WikiDataDir" && \
@@ -40,8 +42,6 @@ RUN groupadd --gid "1000" oddmuse && \
     rm -f /etc/apache2/sites-enabled/* && \
     a2enmod cgid && \
     a2ensite oddmuse
-
-COPY apache2-oddmuse.conf /etc/apache2/sites-available/oddmuse.conf
 
 VOLUME ["/data"]
 EXPOSE 80
