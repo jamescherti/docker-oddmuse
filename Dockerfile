@@ -44,6 +44,7 @@ RUN mkdir -p "$WikiDataDir" && \
     chown oddmuse:oddmuse "$WikiDataDir" && \
     chmod 755 /usr/lib/cgi-bin/*.pl && \
     rm -f /etc/apache2/sites-enabled/* && \
+    a2enmod rewrite && \
     a2enmod cgid && \
     a2ensite oddmuse
 
