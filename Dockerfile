@@ -33,7 +33,7 @@ RUN wget -O /usr/lib/cgi-bin/wiki.pl \
         https://git.savannah.nongnu.org/cgit/oddmuse.git/plain/wiki.pl
 
 RUN groupadd --gid "1000" oddmuse && \
-    useradd -m --gid oddmuse --uid "1000" --shell /bin/bash oddmuse
+    useradd -m --gid oddmuse --uid "1000" --shell /bin/bash oddmuse && \
     mkdir -p "$WikiDataDir" && \
     chown oddmuse:oddmuse "$WikiDataDir" && \
     chmod 755 /usr/lib/cgi-bin/*.pl && \
