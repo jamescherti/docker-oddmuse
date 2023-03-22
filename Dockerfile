@@ -10,6 +10,9 @@ LABEL Description="Docker image for Oddmuse (Wiki engine)"
 LABEL org.opencontainers.image.authors="James Cherti"
 
 ENV WikiDataDir=/data
+
+# If the ODDMUSE_URL_PATH is set to "/wiki", then accessing the URL
+# www.domain.com/wiki will lead to the Oddmuse wiki.
 ENV ODDMUSE_URL_PATH=/wiki
 
 RUN DEBIAN_FRONTEND="noninteractive" apt-get -q update && \
