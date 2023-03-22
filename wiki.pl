@@ -4,5 +4,5 @@
 # URL: https://github.com/jamescherti/docker-oddmuse
 
 package OddMuse;
-$DataDir = '/oddmuse';
+$DataDir = $_ENV{'WikiDataDir'};
 do '/usr/lib/cgi-bin/current.pl';

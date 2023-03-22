@@ -27,7 +27,7 @@ docker build -t jamescherti/oddmuse github.com/jamescherti/docker-oddmuse
 
 ``` shell
 docker run -it --rm \
-  -v /local/path/to/oddmuse:/oddmuse \
+  -v /local/path/to/oddmuse:/data \
   -p 8080:80 \
   jamescherti/oddmuse
 ```

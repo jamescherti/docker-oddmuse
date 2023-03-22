@@ -7,7 +7,7 @@
 
 FROM debian:bullseye
 
-ENV WikiDataDir=/oddmuse
+ENV WikiDataDir=/data
 
 RUN DEBIAN_FRONTEND="noninteractive" apt-get -q update && \
     # Upgrade
@@ -45,9 +45,11 @@ RUN chmod 755 /usr/lib/cgi-bin/*.pl && \
     mkdir -p "$WikiDataDir" && \
     chown oddmuse:oddmuse "$WikiDataDir"
 
-VOLUME ["/oddmuse"]
+VOLUME ["/data"]
 EXPOSE 80
 
 COPY entrypoint.sh /sbin/entrypoint.sh
 RUN chmod 755 /sbin/entrypoint.sh
+CMD ["/sbin/entrypoint.sh"]
+
 CMD ["/sbin/entrypoint.sh"]
