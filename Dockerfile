@@ -37,16 +37,14 @@ RUN mkdir -p /usr/lib/cgi-bin && \
 
 COPY apache2-oddmuse.conf /etc/apache2/sites-available/oddmuse.conf
 
-# RUN groupadd --gid "1000" oddmuse && \
-#     useradd -m --gid oddmuse --uid "1000" --shell /bin/bash oddmuse
+RUN groupadd --gid "1000" oddmuse && \
+    useradd -m --gid oddmuse --uid "1000" --shell /bin/bash oddmuse
 
 RUN mkdir -p "$WikiDataDir" && \
-    chown www-data:www-data "$WikiDataDir" && \
+    chown oddmuse:oddmuse "$WikiDataDir" && \
     chmod 755 /usr/lib/cgi-bin/*.pl && \
     rm -f /etc/apache2/sites-enabled/* && \
     a2enmod cgid && \
-    a2enmod rewrite && \
-    # a2enmod rewrite && \
     a2ensite oddmuse
 
 VOLUME ["/data"]
