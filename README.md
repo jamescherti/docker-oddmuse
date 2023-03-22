@@ -4,7 +4,7 @@
 
 ## What is Oddmuse?
 
-Oddmuse is a wiki engine. Unlike other wiki engines that rely on local or remote databases to store and modify content, Oddmuse utilizes the local file system. This means that users can create and manage Wiki pages on their local machine and easily transfer them to other locations or servers. By leveraging the local file system, Oddmuse eliminates the need for complex and costly database setups, making it a cost-effective solution for individuals and organizations.
+Oddmuse is a wiki engine. Unlike other wiki engines that rely on local or remote databases to store and modify content, Oddmuse utilizes the local file system. This means that users can create and manage Wiki pages on their local machine and easily transfer them to other locations or servers. By leveraging the local file system, Oddmuse eliminates the need for complex and costly database setups.
 
 ## Installation
 
@@ -26,9 +26,10 @@ docker build -t jamescherti/oddmuse github.com/jamescherti/docker-oddmuse
 ## Usage
 
 ``` shell
-docker run -it --rm \
-  -v /local/path/to/oddmuse:/data \
+docker run --rm \
+  -v /local/path/oddmuse_data:/data \
   -p 8080:80 \
+  --env ODDMUSE_URL_PATH=/wiki \
   jamescherti/oddmuse
 ```
 
