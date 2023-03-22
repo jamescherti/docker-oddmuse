@@ -3,7 +3,10 @@
 # Author: James Cherti
 # URL: https://github.com/jamescherti/docker-oddmuse
 
-! [ -f /etc/apache2/envvars.default ] && cp /etc/apache2/envvars /etc/apache2/envvars.default
+if ! [ -f /etc/apache2/envvars.default ]; then
+    cp /etc/apache2/envvars /etc/apache2/envvars.default
+fi
+
 cp /etc/apache2/envvars.default /etc/apache2/envvars
 
 {

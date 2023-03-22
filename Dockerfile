@@ -51,7 +51,6 @@ RUN mkdir -p "$WikiDataDir" && \
 
 VOLUME ["/data"]
 EXPOSE 80
-EXPOSE 443
 
 COPY entrypoint.sh /sbin/entrypoint.sh
 RUN chmod 755 /sbin/entrypoint.sh
