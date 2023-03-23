@@ -1,6 +1,6 @@
 # Docker-oddmuse - Oddmuse Docker Container
 
-**Author:** James Cherti
+**Author:** [James Cherti](https://www.jamescherti.com)
 
 ## What is Oddmuse?
 
@@ -17,10 +17,11 @@ docker pull jamescherti/oddmuse
 
 ### Build the Docker container
 
-Alternatively, you can build the `oddmuse` Docker container using the command:
+Alternatively, you can build the `oddmuse` Docker container using the following commands:
 
 ``` shell
-docker build -t jamescherti/oddmuse github.com/jamescherti/docker-oddmuse
+git clone https://github.com/jamescherti/docker-oddmuse
+docker build -t jamescherti/oddmuse docker-oddmuse
 ```
 
 ## Usage
